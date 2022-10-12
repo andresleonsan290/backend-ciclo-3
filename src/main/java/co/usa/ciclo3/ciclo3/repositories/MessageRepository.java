@@ -28,14 +28,14 @@ public class MessageRepository {
     
     //DELETE
     public void deleteMessage(int id){
-        if (!messageCrudRepository.findById(id).isEmpty()) {
+        if (messageCrudRepository.findById(id).isPresent()) {
             messageCrudRepository.deleteById(id);
         }
     }
     
     //PUT
     public void updateMessage(int id, Message message){
-        if(!messageCrudRepository.findById(id).isEmpty()){
+        if(messageCrudRepository.findById(id).isPresent()){
             Message messageDB = messageCrudRepository.findById(id).get();
             if (message.getMessageText() != null) {
                 messageDB.setMessageText(message.getMessageText());
