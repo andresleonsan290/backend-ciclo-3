@@ -9,7 +9,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class Ciclo3Application {
 
 	public static void main(String[] args) {
+            System.out.println("Applicación inicializada");
 		SpringApplication.run(Ciclo3Application.class, args);
+            System.out.println("Sentencia despues de iniciada la aplicación");
 	}
 
 } 
