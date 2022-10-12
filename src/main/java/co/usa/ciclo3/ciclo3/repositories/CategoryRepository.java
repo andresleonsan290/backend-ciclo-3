@@ -23,18 +23,7 @@ public class CategoryRepository {
     
     //POST
     public Category saveCategory(Category category){ 
-        if(category.getId()==null){
-            return categoryCrudRepository.save(category);
-        }
-        else{
-            Optional<Category> categoryAux = categoryCrudRepository.findById(category.getId());
-            if (categoryAux.isEmpty()) {
-                return categoryCrudRepository.save(category);
-            }
-            else{
-                return category;
-            }
-        }
+        return categoryCrudRepository.save(category);
     }
     
     //DELETE

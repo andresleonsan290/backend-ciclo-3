@@ -23,18 +23,7 @@ public class CabinRepository {
     
     //POST
     public Cabin saveCabin(Cabin cabin){ 
-        if(cabin.getId()==null){
-            return cabinCrudRepository.save(cabin);
-        }
-        else{
-            Optional<Cabin> cabinAux = cabinCrudRepository.findById(cabin.getId());
-            if (cabinAux.isEmpty()) {
-                return cabinCrudRepository.save(cabin);
-            }
-            else{
-                return cabin;
-            }
-        }
+        return cabinCrudRepository.save(cabin);
     }
     
     //DELETE

@@ -23,18 +23,7 @@ public class ScoreRepository {
     
     //POST
     public Score saveScore(Score score){ 
-        if(score.getIdScore()==null){
-            return scoreCrudRepository.save(score);
-        }
-        else{
-            Optional<Score> scoreAux = scoreCrudRepository.findById(score.getIdScore());
-            if (scoreAux.isEmpty()) {
-                return scoreCrudRepository.save(score);
-            }
-            else{
-                return score;
-            }
-        }
+        return scoreCrudRepository.save(score);
     }
     
     //DELETE

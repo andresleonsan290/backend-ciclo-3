@@ -23,18 +23,7 @@ public class ClientRepository {
     
     //POST
     public Client saveClient(Client client){ 
-        if(client.getIdClient()==null){
-            return clientCrudRepository.save(client);
-        }
-        else{
-            Optional<Client> clientAux = clientCrudRepository.findById(client.getIdClient());
-            if (clientAux.isEmpty()) {
-                return clientCrudRepository.save(client);
-            }
-            else{
-                return client;
-            }
-        }
+        return clientCrudRepository.save(client);
     }
     
     //DELETE

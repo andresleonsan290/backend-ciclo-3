@@ -25,18 +25,7 @@ public class ReservationRepository {
     public Reservation saveReservation(Reservation reservation){
         reservation.setStartDate(reservation.getStartDate() + "T00:00:00:000+00:00");
         reservation.setDevolutionDate(reservation.getDevolutionDate() + "T00:00:00:000+00:00");
-        if(reservation.getIdReservation()==null){
-            return reservationCrudRepository.save(reservation);
-        }
-        else{
-            Optional<Reservation> reservationAux = reservationCrudRepository.findById(reservation.getIdReservation());
-            if (reservationAux.isEmpty()) {
-                return reservationCrudRepository.save(reservation);
-            }
-            else{
-                return reservation;
-            }
-        }
+        return reservationCrudRepository.save(reservation);
     }
     
     //DELETE

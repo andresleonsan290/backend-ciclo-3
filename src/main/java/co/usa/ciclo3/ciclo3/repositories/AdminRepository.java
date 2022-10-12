@@ -23,18 +23,7 @@ public class AdminRepository {
     
     //POST
     public Admin saveAdmin(Admin admin){ 
-        if(admin.getId()==null){
-            return adminCrudRepository.save(admin);
-        }
-        else{
-            Optional<Admin> adminAux = adminCrudRepository.findById(admin.getId());
-            if (adminAux.isEmpty()) {
-                return adminCrudRepository.save(admin);
-            }
-            else{
-                return admin;
-            }
-        }
+        return adminCrudRepository.save(admin);
     }
     
     //DELETE

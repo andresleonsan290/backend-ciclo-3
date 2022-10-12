@@ -23,18 +23,7 @@ public class MessageRepository {
     
     //POST
     public Message saveMessage(Message message){ 
-        if(message.getIdMessage()==null){
-            return messageCrudRepository.save(message);
-        }
-        else{
-            Optional<Message> messageAux = messageCrudRepository.findById(message.getIdMessage());
-            if (messageAux.isEmpty()) {
-                return messageCrudRepository.save(message);
-            }
-            else{
-                return message;
-            }
-        }
+        return messageCrudRepository.save(message);
     }
     
     //DELETE
